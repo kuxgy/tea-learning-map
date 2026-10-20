@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>哲学入门学习地图 · 流派与观念全景</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='42' fill='none' stroke='%23A63A2E' stroke-width='6'/%3E%3Ccircle cx='50' cy='50' r='20' fill='%23A63A2E'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+  :root{
+    --paper:#F5EFE0;
+    --paper-deep:#EDE4CF;
+    --ink:#2A2520;
+    --ink-soft:#5A5148;
+    --ink-faint:#8A7F70;
+    --line:#D6CBB0;
+    --cinnabar:#A63A2E;
+    --indigo:#2D4A6B;
+    --gold:#B8893A;
+    --night:#1F2A3A;
+    --night-soft:#3A4A60;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.75;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .serif{font-family:"Noto Serif SC","Songti SC",serif}
+
+  /* ===== 顶部导航 ===== */
+  .topnav{
+    position:sticky;top:0;z-index:100;
+    background:rgba(245,239,224,.94);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .topnav-inner{
+    max-width:1080px;margin:0 auto;
+    padding:14px 20px;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+  }
+  .brand{font-family:"Noto Serif SC",serif;font-weight:700;font-size:17px;letter-spacing:1px;color:var(--ink)}
+  .brand .seal{
+    display:inline-block;background:var(--cinnabar);color:#fff;
+    width:22px;height:22px;line-height:22px;text-align:center;
+    border-radius:3px;font-size:13px;margin-right:8px;vertical-align:1px;
+  }
+  .nav-links{display:flex;gap:4px;flex-wrap:wrap}
+  .nav-links a{
+    color:var(--ink-soft);text-decoration:none;font-size:13.5px;
+    padding:6px 10px;border-radius:4px;transition:all .2s;
+  }
+  .nav-links a:hover{background:var(--paper-deep);color:var(--cinnabar)}
+
+  /* ===== Hero ===== */
+  .hero{
+    padding:64px 20px 56px;
+    text-align:center;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(166,58,46,.05) 0, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(45,74,107,.05) 0, transparent 40%),
+      var(--paper);
+    border-bottom:1px solid var(--line);
+  }
+  .hero .eyebrow{
+    display:inline-block;font-size:12.5px;letter-spacing:4px;
+    color:var(--cinnabar);margin-bottom:20px;font-weight:500;
+  }
+  .hero h1{
+    font-family:"Noto Serif SC",serif;
+    font-size:clamp(32px,6vw,56px);
+    font-weight:900;line-height:1.25;
+    color:var(--ink);margin-bottom:20px;
+  }
+  .hero h1 .accent{color:var(--cinnabar)}
+  .hero .sub{
+    max-width:620px;margin:0 auto 28px;
+    color:var(--ink-soft);font-size:16px;line-height:1.9;
+  }
+  .hero .meta-row{
+    display:flex;justify-content:center;gap:28px;flex-wrap:wrap;
+    margin-top:12px;
+  }
+  .hero .meta{font-size:13px;color:var(--ink-faint)}
+  .hero .meta b{display:block;font-size:22px;color:var(--ink);font-family:"Noto Serif SC",serif;font-weight:700}
+
+  /* ===== 通用容器 ===== */
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  section{padding:64px 0}
+  section + section{border-top:1px solid var(--line)}
+  .sec-head{margin-bottom:36px}
+  .sec-num{
+    font-family:"Noto Serif SC",serif;
+    color:var(--cinnabar);font-size:14px;letter-spacing:3px;margin-bottom:8px;
+  }
+  .sec-head h2{
+    font-family:"Noto Serif SC",serif;
+    font-size:clamp(24px,3.5vw,34px);font-weight:700;line-height:1.3;
+    margin-bottom:12px;
+  }
+  .sec-head p{color:var(--ink-soft);max-width:680px;font-size:15px}
+
+  /* ===== 三大分支卡片 ===== */
+  .branches{display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:720px){.branches{grid-template-columns:repeat(3,1fr)}}
+  .branch{
+    background:#FBF8F0;border:1px solid var(--line);
+    padding:26px 22px;border-radius:6px;
+  }
+  .branch .ico{
+    width:40px;height:40px;border-radius:50%;
+    background:var(--indigo);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-family:"Noto Serif SC",serif;font-size:18px;margin-bottom:14px;
+  }
+  .branch:nth-child(2) .ico{background:var(--cinnabar)}
+  .branch:nth-child(3) .ico{background:var(--gold)}
+  .branch h3{font-family:"Noto Serif SC",serif;font-size:19px;margin-bottom:6px}
+  .branch .en{font-size:12px;color:var(--ink-faint);letter-spacing:1px;margin-bottom:12px}
+  .branch p{font-size:14px;color:var(--ink-soft);line-height:1.8}
+  .branch .q{margin-top:12px;padding-top:12px;border-top:1px dashed var(--line);font-size:13px;color:var(--indigo);font-style:italic}
+
+  /* ===== 时间线 ===== */
+  .era-block{margin-bottom:44px}
+  .era-title{
+    display:flex;align-items:baseline;gap:14px;
+    margin-bottom:20px;padding-bottom:10px;
+    border-bottom:2px solid var(--ink);
+  }
+  .era-title .era-year{
+    font-family:"Noto Serif SC",serif;
+    font-size:14px;color:var(--cinnabar);font-weight:600;white-space:nowrap;
+  }
+  .era-title h3{
+    font-family:"Noto Serif SC",serif;font-size:22px;font-weight:700;
+  }
+  .era-desc{color:var(--ink-soft);font-size:14.5px;margin-bottom:20px;max-width:760px}
+
+  /* 流派卡片 */
+  .schools{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:680px){.schools{grid-template-columns:repeat(2,1fr)}}
+  .school{
+    background:#FBF8F0;border:1px solid var(--line);border-radius:6px;
+    overflow:hidden;
+  }
+  .school-head{
+    padding:16px 18px;cursor:pointer;
+    display:flex;justify-content:space-between;align-items:center;gap:10px;
+    transition:background .2s;
+  }
+  .school-head:hover{background:var(--paper-deep)}
+  .school-head .lhs{min-width:0}
+  .school-head h4{
+    font-family:"Noto Serif SC",serif;font-size:17px;font-weight:700;
+    margin-bottom:3px;
+  }
+  .school-head .figures{font-size:12.5px;color:var(--ink-faint)}
+  .school-head .arrow{
+    flex-shrink:0;width:24px;height:24px;
+    transition:transform .25s;color:var(--ink-faint);
+  }
+  .school.open .school-head .arrow{transform:rotate(180deg)}
+  .school-body{
+    max-height:0;overflow:hidden;transition:max-height .3s ease;
+  }
+  .school.open .school-body{max-height:600px}
+  .school-body-inner{
+    padding:0 18px 18px;
+    border-top:1px dashed var(--line);
+    padding-top:14px;
+  }
+  .school-body-inner p{font-size:14px;color:var(--ink-soft);line-height:1.85;margin-bottom:10px}
+  .school-body-inner .tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .tag{
+    font-size:12px;padding:3px 10px;border-radius:20px;
+    background:var(--paper-deep);color:var(--ink-soft);
+  }
+
+  /* ===== 夜间色块区（中国哲学） ===== */
+  .night-section{
+    background:var(--night);color:#E8E2D2;
+  }
+  .night-section .sec-head h2{color:#F5EFE0}
+  .night-section .sec-head p{color:#B8B0A0}
+  .night-section .sec-num{color:#D97757}
+  .cn-grid{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:680px){.cn-grid{grid-template-columns:repeat(2,1fr)}}
+  .cn-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:6px;padding:22px;
+  }
+  .cn-card h4{
+    font-family:"Noto Serif SC",serif;font-size:19px;color:#F0E8D2;
+    margin-bottom:4px;
+  }
+  .cn-card .fig{font-size:12.5px;color:#9A9282;margin-bottom:12px}
+  .cn-card p{font-size:14px;color:#C8C0B0;line-height:1.8}
+  .cn-card .core{
+    margin-top:12px;padding-top:12px;border-top:1px dashed rgba(255,255,255,.15);
+    font-size:13px;color:#D9B87A;
+  }
+
+  /* ===== 核心问题 ===== */
+  .q-list{display:grid;grid-template-columns:1fr;gap:12px}
+  @media(min-width:680px){.q-list{grid-template-columns:repeat(2,1fr)}}
+  .q-item{
+    background:#FBF8F0;border-left:3px solid var(--cinnabar);
+    padding:18px 20px;border-radius:0 6px 6px 0;
+  }
+  .q-item h4{
+    font-family:"Noto Serif SC",serif;font-size:16.5px;margin-bottom:8px;color:var(--ink);
+  }
+  .q-item p{font-size:13.5px;color:var(--ink-soft);line-height:1.8}
+
+  /* ===== 思想实验 ===== */
+  .exp-grid{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:720px){.exp-grid{grid-template-columns:repeat(2,1fr)}}
+  .exp-card{
+    background:linear-gradient(180deg,#FBF8F0 0%,#F5EFE0 100%);
+    border:1px solid var(--line);border-radius:6px;padding:22px;
+  }
+  .exp-card .exp-name{
+    font-family:"Noto Serif SC",serif;font-size:17px;font-weight:700;
+    color:var(--indigo);margin-bottom:4px;
+  }
+  .exp-card .exp-author{font-size:12px;color:var(--ink-faint);margin-bottom:12px}
+  .exp-card p{font-size:14px;color:var(--ink-soft);line-height:1.85}
+
+  /* ===== 书单 ===== */
+  .book-list{display:grid;grid-template-columns:1fr;gap:12px}
+  @media(min-width:680px){.book-list{grid-template-columns:repeat(2,1fr)}}
+  .book{
+    display:flex;gap:14px;align-items:flex-start;
+    background:#FBF8F0;border:1px solid var(--line);border-radius:6px;padding:16px 18px;
+  }
+  .book .num{
+    flex-shrink:0;width:32px;height:32px;border-radius:50%;
+    background:var(--cinnabar);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-family:"Noto Serif SC",serif;font-size:15px;
+  }
+  .book h4{font-family:"Noto Serif SC",serif;font-size:16px;margin-bottom:3px}
+  .book p{font-size:13px;color:var(--ink-soft);line-height:1.7}
+
+  /* ===== 页脚 ===== */
+  footer{
+    background:var(--night);color:#8A8272;
+    text-align:center;padding:36px 20px;font-size:13px;line-height:1.9;
+  }
+  footer .serif{color:#D8D0C0;font-size:15px;margin-bottom:8px}
+
+  /* 回到顶部 */
+  .to-top{
+    position:fixed;right:20px;bottom:24px;
+    width:44px;height:44px;border-radius:50%;
+    background:var(--ink);color:#fff;border:none;cursor:pointer;
+    font-size:18px;box-shadow:0 4px 12px rgba(0,0,0,.2);
+    opacity:0;pointer-events:none;transition:opacity .3s;
+    z-index:99;
+  }
+  .to-top.show{opacity:1;pointer-events:auto}
+
+  @media(max-width:600px){
+    .nav-links{display:none}
+    section{padding:44px 0}
+    .hero{padding:44px 18px 36px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== 顶部导航 ===== -->
+<nav class="topnav">
+  <div class="topnav-inner">
+    <div class="brand"><span class="seal">哲</span>哲学入门地图</div>
+    <div class="nav-links">
+      <a href="#what">什么是哲学</a>
+      <a href="#west">西方脉络</a>
+      <a href="#china">中国智慧</a>
+      <a href="#questions">核心问题</a>
+      <a href="#experiments">思想实验</a>
+      <a href="#books">入门书单</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== Hero ===== -->
+<header class="hero">
+  <div class="eyebrow">PHILOSOPHIA · 爱 智 慧</div>
+  <h1>两千五百年的<span class="accent">追问</span>，<br>一张地图入门</h1>
+  <p class="sub">
+    哲学不是晦涩的术语堆砌，而是每个人天生就会问的那些问题——
+    "我是谁""世界从哪来""什么是好的生活"。
+    这张页面把西方与中国主要哲学流派、核心观念和著名思想实验整理成一张可按图索骥的地图，
+    陪你走完第一程。
+  </p>
+  <div class="meta-row">
+    <div class="meta"><b>8+</b>历史时期</div>
+    <div class="meta"><b>30+</b>哲学流派</div>
+    <div class="meta"><b>6</b>核心问题域</div>
+    <div class="meta"><b>6</b>经典思想实验</div>
+  </div>
+</header>
+
+<!-- ===== 01 什么是哲学 ===== -->
+<section id="what">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">壹 / WHAT IS PHILOSOPHY</div>
+      <h2>先搞清楚：哲学到底在问什么</h2>
+      <p>"哲学"（Philosophy）源自希腊语 <i>philosophia</i>，意为"爱智慧"。它不提供标准答案，而是训练我们如何追问。现代学术通常把哲学分成三大分支，你在后面遇到的所有流派，基本都在回答这三类问题。</p>
+    </div>
+    <div class="branches">
+      <div class="branch">
+        <div class="ico">形</div>
+        <h3>形而上学</h3>
+        <div class="en">Metaphysics · 研究"存在"</div>
+        <p>世界最根本的实在是什么？心灵与身体是什么关系？时间、空间、因果是真实存在，还是我们的认知框架？</p>
+        <div class="q">代表追问："世界的本原是水、是火，还是某种原子？"</div>
+      </div>
+      <div class="branch">
+        <div class="ico">认</div>
+        <h3>认识论</h3>
+        <div class="en">Epistemology · 研究"知道"</div>
+        <p>我们能确定地知道什么？知识来自理性推理，还是感官经验？科学为什么可信？真理的标准是什么？</p>
+        <div class="q">代表追问："我怎么知道我不是在做梦？缸中之脑？"</div>
+      </div>
+      <div class="branch">
+        <div class="ico">伦</div>
+        <h3>伦理学</h3>
+        <div class="en">Ethics · 研究"如何活"</div>
+        <p>什么是善、什么是恶？有没有客观的道德标准？什么是正义？什么样的人生才算过得好？</p>
+        <div class="q">代表追问："为了救五个人，该不该牺牲一个人？"</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 02 西方哲学脉络 ===== -->
+<section id="west">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">贰 / WESTERN PHILOSOPHY</div>
+      <h2>西方哲学：一条两千五百年的长河</h2>
+      <p>从公元前 6 世纪古希腊人第一次不再用神话解释世界开始，西方哲学经历了几次大的转向。下面按时代顺序展开，点击每个流派卡片可查看它的核心主张、代表人物和关键词。</p>
+    </div>
+
+    <!-- 时期一：古希腊早期 -->
+    <div class="era-block">
+      <div class="era-title">
+        <span class="era-year">公元前 6—前 5 世纪</span>
+        <h3>古希腊的黎明：第一次"用自然解释自然"</h3>
+      </div>
+      <p class="era-desc">在这之前，希腊人用奥林匹斯山上的诸神解释雷电、地震和命运。米利都的一群人第一次问：抛开神话，世界<b>最根本的本原</b>到底是什么？这一问，标志着哲学（以及科学）的诞生。</p>
+      <div class="schools">
+        <div class="school">
+          <div class="school-head">
+            <div class="lhs">
+              <h4>米利都学派</h4>
+              <div class="figures">代表人物：泰勒斯、阿那克西曼德、阿那克西美尼</div>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="school-body"><div class="school-body-inner">
+            <p>泰勒斯说"水是万物的本原"——这句话在今天看来幼稚，但它的革命性在于：他试图用<b>一种自然物质</b>而不是神来解释整个世界。阿那克西美尼认为是"气"，稀薄成火、浓缩成风、云、水、土、石。</p>
+            <p>他们共同开创了"自然哲学"传统：世界是有秩序、有规律的，人可以通过理性去把握它。</p>
+            <div class="tag-row"><span class="tag">本原问题</span><span class="tag">自然主义</span><span class="tag">西方哲学开端</span></div>
+          </div></div>
+        </div>
+
+        <div class="school">
+          <div class="school-head">
+            <div class="lhs">
+              <h4>赫拉克利特</h4>
+              <div class="figures">代表人物：赫拉克利特（"晦涩者"）</div>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="school-body"><div class="school-body-inner">
+            <p>核心命题："人不能两次踏入同一条河流。"他认为<b>万物皆流，无物常驻</b>，世界的本原是"火"——不是物质之火，而是一种永恒燃烧、按规律转化的过程。</p>
+            <p>他还提出对立面的统一：上坡路和下坡路是同一条路，疾病使健康可贵，冲突是万物之父。这一思想后来深刻影响了黑格尔和马克思的辩证法。</p>
+            <div class="tag-row"><span class="tag">万物流变</span><span class="tag">辩证法萌芽</span><span class="tag">逻各斯（Logos）</span></div>
+          </div></div>
+        </div>
+
+        <div class="school">
+          <div class="school-head">
+            <div class="lhs">
+              <h4>巴门尼德与埃利亚学派</h4>
+              <div class="figures">代表人物：巴门尼德、芝诺</div>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="school-body"><div class="school-body-inner">
+            <p>与赫拉克利特针锋相对：巴门尼德认为<b>"存在者存在，不存在者不存在"</b>，变化和运动都是感官带来的幻觉。真正的"存在"是唯一、永恒、不动、不可分的。</p>
+            <p>他的学生芝诺提出著名的"飞矢不动""阿基里斯追不上乌龟"等悖论，用逻辑论证运动不可能——这是西方哲学第一次系统地用理性挑战感官经验。</p>
+            <div class="tag-row"><span class="tag">存在论</span><span class="tag">理性主义源头</span><span class="tag">芝诺悖论</span></div>
+          </div></div>
+        </div>
+
+        <div class="school">
+          <div class="school-head">
+            <div class="lhs">
+              <h4>毕达哥拉斯学派</h4>
+              <div class="figures">代表人物：毕达哥拉斯及其门徒</div>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="school-body"><div class="school-body-inner">
+            <p>"数是万物的本原。"他们发现音乐的和声可以用整数比例（2:1、3:2、4:3）表示，进而相信整个宇宙是由数学结构构成的——从天体运行到灵魂秩序。</p>
+            <p>这一信念深刻影响了后来的柏拉图、开普勒，乃至现代物理学"宇宙是用数学写就的"这一信念。</p>
+            <div class="tag-row"><span class="tag">数学实在论</span><span class="tag">神秘主义团体</span><span class="tag">影响柏拉图</span></div>
+          </div></div>
+        </div>
+
+        <div class="school">
+          <div class="school-head">
+            <div class="lhs">
+              <h4>原子论</h4>
+              <div class="figures">代表人物：留基伯、德谟克利特</div>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="school-body"><div class="school-body-inner">
+            <p>宇宙只有两样东西：<b>原子</b>（不可再分的物质微粒）和<b>虚空</b>。万物的产生和消亡，都是原子在虚空中的涡旋运动、碰撞与结合。</p>
+            <p>这是古代世界最接近现代科学的假说。德谟克利特甚至认为灵魂也是由更精细的原子构成——彻底的唯物主义。</p>
+            <div class="tag-row"><span class="tag">唯物主义先驱</span><span class="tag">还原论</span><span class="tag">影响近代科学</span></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 时期二：雅典三贤 -->
+    <div class="era-block">
+      <div class="era-title">
+        <span class="era-year">公元前 5—前 4 世纪</span>
+        <h3>雅典三贤：苏格拉底、柏拉图、亚里士多德</h3>
+      </div>
+      <p class="era-desc">哲学的焦点从"自然"转向"人"。这三位师徒相继，建立了西方哲学的基本问题框架——什么是正义、什么是真理、如何认识世界。后来几乎所有西方哲学家，都像怀特海说的那样，是在"给柏拉图作注脚"。</p>
+      <div class="schools">
+        <div class="school">
+          <div class="school-head">
+            <div class="lhs">
+              <h4>苏格拉底</h4>
+              <div class="figures">公元前 469—前 399 年 · 雅典</div>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="school-body"><div class="school-body-inner">
+            <p>他本人一字未写，思想全靠学生柏拉图的对话录流传。他在雅典街头逢人便问："什么是正义？什么是勇敢？什么是善？"——通过不断追问和揭示对方的逻辑矛盾（后世称为<b>"苏格拉底式诘问"</b>），让人意识到自己其实一无所知。</p>
+            <p>名言："未经审视的人生不值得过。"最后他因"不敬神"和"败坏青年"被判处死刑，饮鸩而死，成为西方哲学为思想献身的原型。</p>
+            <div class="tag-row"><span class="tag">辩证法</span><span class="tag">认识你自己</span><span class="tag">道德即知识</span></div>
+          </div></div>
+        </div>
+
+        <div class="school">
+          <div class="school-head">
+            <div class="lhs">
+              <h4>柏拉图</h4>
+              <div class="figures">公元前 427—前 347 年 · 创立雅典学园</div>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="school-body"><div class="school-body-inner">
+            <p>核心理论是<b>"理念论"</b>：我们感官所看到的世界（一匹匹马、一张张床）只是幻影，真正真实存在的是"马的理念""床的理念"——完美、永恒、普遍的原型。我们对理念的认识，只是灵魂在出生前对已有知识的"回忆"。</p>
+            <p>《理想国》探讨什么是正义的城邦；著名的<b>"洞穴寓言"</b>把人类比作锁在洞穴里、把墙上投影当真实的囚徒，哲学家就是转身走出洞穴、看见阳光（善的理念）的人。</p>
+            <div class="tag-row"><span class="tag">理念论</span><span class="tag">理想国</span><span class="tag">理性主义源头</span></div>
+          </div></div>
+        </div>
+
+        <div class="school">
+          <div class="school-head">
+            <div class="lhs">
+              <h4>亚里士多德</h4>
+              <div class="figures">公元前 384—前 322 年 · 柏拉图学生、亚历山大之师</div>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="school-body"><div class="school-body-inner">
+            <p>他是古希腊的"百科全书式学者"，几乎开创了逻辑学、物理学、生物学、政治学、诗学、伦理学每一门学科。与老师柏拉图相反，他认为<b>形式不在另一个彼岸世界，而就在具体事物之中</b>——一颗橡子的"目的"是长成橡树。</p>
+            <p>伦理学上提出<b>"幸福（eudaimonia）"是人的最高目的</b>，而幸福在于合乎德性的实现活动；德性是两种恶之间的"中道"（勇敢是鲁莽与怯懦之间的中道）。他的著作统治了西方思想近两千年。</p>
+            <div class="tag-row"><span class="tag">形质论</span><span class="tag">三段论逻辑</span><span class="tag">中道伦理</span><span class="tag">幸福论</span></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 时期三：希腊化与罗马 -->
+    <div class="era-block">
+      <div class="era-title">
+        <span class="era-year">公元前 4 世纪—公元 3 世纪</span>
+        <h3>希腊化与罗马：在动荡时代如何自处</h3>
+      </div>
+      <p class="era-desc">亚历山大帝国之后，城邦瓦解，人们生活在庞大而不安定的帝国里。哲学从"认识世界"转向"如何过上内心安宁的生活"——伦理学成为这个时代的中心。</p>
+      <div class="schools">
+        <div class="school">
+          <div class="school-head">
+            <div class="lhs">
+              <h4>斯多葛学派</h4>
+              <div class="figures">代表人物：芝诺、塞涅卡、爱比克泰德、马可·奥勒留</div>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="school-body"><div class="school-body-inner">
+            <p>核心主张：<b>区分"能控制的"和"不能控制的"</b>。我们无法控制外界发生什么，但可以控制自己对事件的判断和反应。痛苦不来自事情本身，而来自我们对事情的看法。</p>
+            <p>美德（智慧、勇敢、节制、正义）本身就是幸福，外在财富、健康、名声只是"可取的无关紧要之物"。罗马皇帝马可·奥勒留的《沉思录》至今仍是畅销的心灵读物。</p>
+            <div class="tag-row"><span class="tag">美德即幸福</span><span class="tag">理性自足</span><span class="tag">当代正念源头</span></div>
+          </div></div>
+        </div>
+
+        <div class="school">
+          <div class="school-head">
+            <div class="lhs">
+              <h4>伊壁鸠鲁学派</h4>
+              <div class="figures">代表人物：伊壁鸠鲁</div>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="school-body"><div class="school-body-inner">
+            <p>常被误解为"吃喝玩乐派"，其实伊壁鸠鲁说的快乐是<b>"身体无痛苦、灵魂无纷扰"</b>。他区分了三种欲望：自然且必要的（衣食）、自然但不必要的（美食豪宅）、既不自然也不必要的（名声、权力）。</p>
+            <p>他还提出著名的"神与痛苦无关"论证：如果神愿意阻止恶却不能，他就不是全能的；如果能却不愿意，他就不是全善的——这成为后来神正论问题的源头。</p>
+            <div class="tag-row"><span class="tag">快乐主义</span><span class="tag">原子论继承者</span><span class="tag">宗教批判</span></div>
+          </div></div>
+        </div>
+
+        <div class="school">
+          <div class="school-head">
+            <div class="lhs">
+              <h4>怀疑主义</h4>
+              <div class="figures">代表人物：皮浪、塞克斯都·恩披里柯</div>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="school-body"><div class="school-body-inner">
+            <p>核心立场：<b>对任何独断的判断"悬搁判断"（epoché）</b>。对每一个命题，都能找到一个同样有力的反命题与之对立；既然双方证据相当，最明智的做法是不下判断。</p>
+            <p>有趣的是，他们认为这种"不做判断"的态度恰恰能带来心灵的宁静——因为你不再为"到底什么是真的"而焦虑。这是现代怀疑论、相对主义的古老先声。</p>
+            <div class="tag-row"><span class="tag">悬搁判断</span><span class="tag">反独断论</span><span class="tag">影响休谟</span></div>
+          </div></div>
+        </div>
+
+        <div class="school">
+          <div class="school-head">
+            <div class="lhs">
+              <h4>新柏拉图主义</h4>
+              <div class="figures">代表人物：普罗提诺</div>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="school-body"><div class="school-body-inner">
+            <p>普罗提诺提出一个"流溢"图景：最高的"太一"（不可言说的终极本原）流溢出"理智"，理智流溢出"灵魂"，灵魂再流溢出物质世界。人生的终极目标，是通过德性与冥想，<b>重新回归太一</b>。</p>
+            <p>这一体系把柏拉图哲学改造为一种神秘主义，深刻塑造了后来的基督教神学、伊斯兰教哲学和犹太教神秘主义。</p>
+            <div class="tag-row"><span class="tag">太一</span><span class="tag">神秘主义</span><span class="tag">衔接中世纪神学</span></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 时期四：中世纪 -->
+    <div class="era-block">
+      <div class="era-title">
+        <span class="era-year">5—15 世纪</span>
+        <h3>中世纪：信仰与理性的漫长对话</h3>
+      </div>
+      <p class="era-desc">罗马帝国灭亡后，基督教会成为西欧知识生活的中心。中世纪哲学（经院哲学）并非"黑暗时代的愚昧"，而是用亚里士多德的逻辑工具系统论证信仰问题——它训练了西方人的逻辑严密性。</p>
+      <div class="schools">
+        <div class="school">
+          <div class="school-head">
+            <div class="lhs">
+              <h4>教父哲学 · 奥古斯丁</h4>
+              <div class="figures">代表人物：奥古斯丁（354—430）</div>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="school-body"><div class="school-body-inner">
+            <p>奥古斯丁把柏拉图主义与基督教信仰结合。他的《忏悔录》是西方第一部自传，深入剖析了<b>内在自我与时间意识</b>："时间是什么？没人问我，我很清楚；一旦问我，我就茫然了。"</p>
+            <p>他提出"自由意志"问题：上帝既然全知全能，人为什么还要为恶负责？这一问题直到今天仍是宗教哲学的核心议题。</p>
+            <div class="tag-row"><span class="tag">原罪与自由意志</span><span class="tag">时间内省</span><span class="tag">柏拉图主义+基督教</span></div>
+          </div></div>
+        </div>
+
+        <div class="school">
+          <div class="school-head">
+            <div class="lhs">
+              <h4>经院哲学 · 阿奎那</h4>
+              <div class="figures">代表人物：托马斯·阿奎那（1225—1274）</div>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="school-body"><div class="school-body-inner">
+            <p>阿奎那用亚里士多德的哲学体系重建神学，其巨著《神学大全》试图证明：<b>信仰与理性并不矛盾</b>，理性可以证明上帝存在（著名的"五路证明"），信仰则补理性所不及（如三位一体）。</p>
+            <p>他的自然法思想——存在一套基于人性的普遍道德法则——深刻影响了后来的西方宪政和人权观念。</p>
+            <div class="tag-row"><span class="tag">信仰与理性调和</span><span class="tag">自然法</span><span class="tag">宇宙论证明</span></div>
+          </div></div>
+        </div>
+
+        <div class="school">
+          <div class="school-head">
+            <div class="lhs">
+              <h4>唯名论 vs 实在论之争</h4>
+              <div class="figures">代表人物：安瑟尔谟（实在论）、奥卡姆的威廉（唯名论）</div>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="school-body"><div class="school-body-inner">
+            <p>这场争论持续数百年："普遍概念"（如"人""正义"）是否真实存在？<b>实在论</b>说共相是真实的、先于个别事物；<b>唯名论</b>说共相只是名字（拉丁 <i>nomen</i>），真实存在的只有一个个具体的人。</p>
+            <p>奥卡姆提出著名的<b>"奥卡姆剃刀"</b>："如无必要，勿增实体"——解释事物时应选择假设最少的理论。这一原则至今是科学方法论的核心。</p>
+            <div class="tag-row"><span class="tag">共相问题</span><span class="tag">奥卡姆剃刀</span><span class="tag">经验主义先声</span></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 时期五：近代早期 -->
+    <div class="era-block">
+      <div class="era-title">
+        <span class="era-year">17 世纪</span>
+        <h3>近代早期：理性与经验的大分野</h3>
+      </div>
+      <p class="era-desc">近代科学革命兴起，哲学家们不再以信仰为前提，转而问：<b>真正可靠的知识从哪里来？</b>欧洲大陆的理性主义和英伦三岛的经验主义给出了两个针锋相对的回答。</p>
+      <div class="schools">
+        <div class="school">
+          <div class="school-head">
+            <div class="lhs">
+              <h4>理性主义</h4>
+              <div class="figures">代表人物：笛卡尔、斯宾诺莎、莱布尼茨</div>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="school-body"><div class="school-body-inner">
+            <p>笛卡尔通过普遍怀疑，找到那个不可怀疑的基点——"我在怀疑这件事本身不可怀疑"，即<b>"我思故我在"</b>。他把心灵（思维实体）和身体（广延实体）视为两种独立实体，这就是著名的"心物二元论"。</p>
+            <p>斯宾诺莎认为只有唯一的"实体"（神即自然），思维和广延只是它的两个属性；莱布尼茨则把世界看作无数精神性的"单子"的和谐排列。三人都相信：真正的知识来自理性演绎，如同几何学。</p>
+            <div class="tag-row"><span class="tag">我思故我在</span><span class="tag">心物二元论</span><span class="tag">天赋观念</span></div>
+          </div></div>
+        </div>
+
+        <div class="school">
+          <div class="school-head">
+            <div class="lhs">
+              <h4>经验主义</h4>
+              <div class="figures">代表人物：洛克、贝克莱、休谟</div>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="school-body"><div class="school-body-inner">
+            <p>洛克提出<b>"白板说"</b>：人心初生时如同一张白纸，一切知识都来自后天经验，不存在天赋观念。贝克莱更进一步："存在就是被感知"——所谓"物质对象"，不过是我们感知观念的集合。</p>
+            <p>休谟把经验主义推到怀疑论的终点：我们所谓的"因果必然性"，只不过是两件事反复先后出现形成的<b>心理习惯</b>，我们无法证明明天太阳一定升起。这一结论把康德从"独断论的迷梦"中惊醒。</p>
+            <div class="tag-row"><span class="tag">白板说</span><span class="tag">存在即被感知</span><span class="tag">因果问题</span></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 时期六：德国古典 -->
+    <div class="era-block">
+      <div class="era-title">
+        <span class="era-year">18 世纪</span>
+        <h3>德国古典哲学：康德与黑格尔的大综合</h3>
+      </div>
+      <p class="era-desc">康德试图调和理性主义与经验主义，黑格尔则把整个世界历史纳入一个辩证体系——他们的著作艰深，但奠定了此后两百年来几乎所有哲学讨论的框架。</p>
+      <div class="schools">
+        <div class="school">
+          <div class="school-head">
+            <div class="lhs">
+              <h4>康德 · 批判哲学</h4>
+              <div class="figures">伊曼努尔·康德（1724—1804）</div>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="school-body"><div class="school-body-inner">
+            <p>康德在《纯粹理性批判》中完成了一场"哥白尼式革命"：不是<b>认识符合对象</b>，而是<b>对象符合我们的认识结构</b>。我们的心灵自带一副"认知眼镜"——时间、空间、因果性等十二范畴——我们看到的世界（现象界）总是经过这副眼镜加工的；而"物自体"本身永远不可知。</p>
+            <p>伦理学上他提出<b>"绝对命令"</b>：只按照你同时愿意它成为普遍法则的那条准则去行动；人是目的，永远不能仅仅当作手段。他的名言："有两样东西，愈是思考愈觉敬畏：头顶的星空和心中的道德律。"</p>
+            <div class="tag-row"><span class="tag">先天综合判断</span><span class="tag">现象与物自体</span><span class="tag">义务论</span></div>
+          </div></div>
+        </div>
+
+        <div class="school">
+          <div class="school-head">
+            <div class="lhs">
+              <h4>黑格尔 · 绝对唯心论</h4>
+              <div class="figures">格奥尔格·威廉·弗里德里希·黑格尔（1770—1831）</div>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="school-body"><div class="school-body-inner">
+            <p>黑格尔认为世界的本质是不断自我展开的<b>"绝对精神"</b>，其发展遵循<b>辩证法三段式</b>：正（正题）→ 反（矛盾）→ 合（扬弃后更高的统一）。历史不是偶然事件的堆积，而是理性（自由意识）逐步实现自身的过程。</p>
+            <p>"凡是现实的都是合理的，凡是合理的都是现实的。"他的体系如一座巨大的概念金字塔，结束了古典哲学，也直接启发了青年黑格尔派（包括马克思）。</p>
+            <div class="tag-row"><span class="tag">辩证法</span><span class="tag">绝对精神</span><span class="tag">历史理性</span></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 时期七：19世纪 -->
+    <div class="era-block">
+      <div class="era-title">
+        <span class="era-year">19 世纪</span>
+        <h3>19 世纪：反叛、左翼与悲观主义</h3>
+      </div>
+      <p class="era-desc">黑格尔之后，哲学迅速分裂。有人从左派发展出对社会与历史的激进批判；有人转向意志、权力与生命本身；也有人在英伦发展出以"后果"为核心的功利主义。</p>
+      <div class="schools">
+        <div class="school">
+          <div class="school-head">
+            <div class="lhs">
+              <h4>功利主义</h4>
+              <div class="figures">代表人物：边沁、密尔</div>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="school-body"><div class="school-body-inner">
+            <p>道德的唯一标准是<b>"最大多数人的最大幸福"</b>。一个行为如果能带来总体快乐、减少痛苦，就是对的；反之就是错的。边沁甚至设计了"幸福微积分"来量化快乐与痛苦。</p>
+            <p>密尔在《论自由》中划出那条著名界限：<b>个人行为只要不伤害他人，社会就无权干涉</b>。这一思想成为现代自由主义的基石。</p>
+            <div class="tag-row"><span class="tag">后果论</span><span class="tag">最大幸福原则</span><span class="tag">自由主义</span></div>
+          </div></div>
+        </div>
+
+        <div class="school">
+          <div class="school-head">
+            <div class="lhs">
+              <h4>叔本华 · 意志哲学</h4>
+              <div class="figures">阿图尔·叔本华（1788—1860）</div>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="school-body"><div class="school-body-inner">
+            <p>受康德和印度奥义书影响，叔本华认为世界的本体不是理性，而是<b>"生命意志"</b>——一种盲目、冲动、永不满足的欲求。人生如同钟摆，在痛苦（求而不得）和无聊（得而又厌）之间摆动。</p>
+            <p>解脱之道在于艺术审美（暂时悬停意志）和同情伦理，最终走向类似佛教的否定意志。他是哲学史上重要的悲观主义者，深刻影响了尼采、托尔斯泰、卡夫卡、弗洛伊德。</p>
+            <div class="tag-row"><span class="tag">生命意志</span><span class="tag">悲观主义</span><span class="tag">东方思想入西方</span></div>
+          </div></div>
+        </div>
+
+        <div class="school">
+          <div class="school-head">
+            <div class="lhs">
+              <h4>尼采</h4>
+              <div class="figures">弗里德里希·尼采（1844—1900）</div>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="school-body"><div class="school-body-inner">
+            <p>尼采宣布<b>"上帝死了"</b>——西方传统的基督教价值已经丧失约束力，但群氓仍在假装相信，这是"虚无主义"的到来。他要求人重估一切价值，不再靠彼岸的安慰，而是在这有限的大地上创造自己的意义。</p>
+            <p>核心概念：<b>权力意志</b>（生命自我超越的冲动）、<b>超人</b>（能够自我立法、承载命运的人）、<b>永恒轮回</b>（假如你必须无数次重过这一辈子，你愿不愿意？）。他不是在鼓吹强权，而是在拷问：你敢不敢成为自己？</p>
+            <div class="tag-row"><span class="tag">上帝死了</span><span class="tag">重估价值</span><span class="tag">永恒轮回</span><span class="tag">超人</span></div>
+          </div></div>
+        </div>
+
+        <div class="school">
+          <div class="school-head">
+            <div class="lhs">
+              <h4>马克思主义哲学</h4>
+              <div class="figures">代表人物：马克思、恩格斯</div>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="school-body"><div class="school-body-inner">
+            <p>马克思把黑格尔的辩证法"颠倒过来"：不是观念决定历史，而是<b>物质生产方式（经济基础）决定法律、政治、宗教等上层建筑</b>。</p>
+            <p>历史是阶级斗争的历史：每一时代的统治阶级借助国家和意识形态维护自身利益；而哲学的任务不只是解释世界，更在于<b>改变世界</b>。这一思想深刻塑造了 20 世纪的世界政治格局。</p>
+            <div class="tag-row"><span class="tag">唯物史观</span><span class="tag">剩余价值</span><span class="tag">实践哲学</span></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 时期八：20世纪 -->
+    <div class="era-block">
+      <div class="era-title">
+        <span class="era-year">20 世纪至今</span>
+        <h3>20 世纪：两条大河，分析与欧陆</h3>
+      </div>
+      <p class="era-desc">20 世纪西方哲学明显分成两大传统：英语世界的<b>分析哲学</b>（重逻辑、语言、科学）和欧洲大陆的<b>欧陆哲学</b>（重存在、体验、历史）。它们几乎像两个学科。</p>
+      <div class="schools">
+        <div class="school">
+          <div class="school-head">
+            <div class="lhs">
+              <h4>实用主义</h4>
+              <div class="figures">代表人物：皮尔士、詹姆斯、杜威</div>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="school-body"><div class="school-body-inner">
+            <p>美国本土哲学：<b>一个观念的意义，在于它所导致的实践效果</b>。问"什么是真理"，不如问"相信这个观念，在生活中会带来什么差别"。</p>
+            <p>詹姆斯把真理理解为"在经验过程中被证明为好的信念"，杜威则把这一精神延伸到教育、民主和社会改造——哲学必须有用，必须介入生活。</p>
+            <div class="tag-row"><span class="tag">意义即效果</span><span class="tag">真理即有用</span><span class="tag">美国哲学</span></div>
+          </div></div>
+        </div>
+
+        <div class="school">
+          <div class="school-head">
+            <div class="lhs">
+              <h4>分析哲学</h4>
+              <div class="figures">代表人物：弗雷格、罗素、早期维特根斯坦、奎因</div>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="school-body"><div class="school-body-inner">
+            <p>20 世纪初，哲学家们借助现代逻辑工具，主张<b>哲学的核心任务是澄清语言</b>。传统形而上学的许多争论，其实是由于语言的误用造成的"假问题"。</p>
+            <p>早期维特根斯坦在《逻辑哲学论》中声称：凡是能够说的，都能够说清楚；凡是不能说的，就必须沉默。这一流派后来发展出语言哲学、心灵哲学、科学哲学，是今天英语世界学院哲学的主流。</p>
+            <div class="tag-row"><span class="tag">语言转向</span><span class="tag">逻辑分析</span><span class="tag">澄清意义</span></div>
+          </div></div>
+        </div>
+
+        <div class="school">
+          <div class="school-head">
+            <div class="lhs">
+              <h4>现象学</h4>
+              <div class="figures">代表人物：胡塞尔、海德格尔</div>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="school-body"><div class="school-body-inner">
+            <p>胡塞尔提出<b>"回到事情本身"</b>：把我们对世界的种种预设（科学理论、常识信念）"悬搁"起来，直接描述意识如何显现事物。</p>
+            <p>他的学生海德格尔在《存在与时间》中问：<b>"存在"的意义是什么？</b>他从"此在"（人这种特殊的存在者）出发，分析人被抛入世界、操心、畏、向死而生的结构——这本书开启了整个 20 世纪欧陆哲学。</p>
+            <div class="tag-row"><span class="tag">回到事情本身</span><span class="tag">存在问题</span><span class="tag">向死而生</span></div>
+          </div></div>
+        </div>
+
+        <div class="school">
+          <div class="school-head">
+            <div class="lhs">
+              <h4>存在主义</h4>
+              <div class="figures">代表人物：萨特、加缪、波伏瓦、雅思贝尔斯</div>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="school-body"><div class="school-body-inner">
+            <p>萨特的核心命题：<b>"存在先于本质"</b>。人没有先天被规定的本质，你通过选择和行动，把自己造成你所是的样子。人被判定为自由——这既是光荣，也是重负，因为你无法把责任推给"本性""命运"或"环境"。</p>
+            <p>加缪则从荒谬出发：人渴望意义，世界却沉默以对；面对荒谬，唯一严肃的哲学问题是自杀——而他的回答是：像神话中永远推石上山的西西弗斯那样，<b>在反抗中本身就足以填满一颗心</b>。</p>
+            <div class="tag-row"><span class="tag">存在先于本质</span><span class="tag">自由与责任</span><span class="tag">荒谬与反抗</span></div>
+          </div></div>
+        </div>
+
+        <div class="school">
+          <div class="school-head">
+            <div class="lhs">
+              <h4>后现代主义</h4>
+              <div class="figures">代表人物：福柯、德里达、利奥塔</div>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="school-body"><div class="school-body-inner">
+            <p>二战之后，对"宏大叙事"（历史进步、普遍理性、人类解放）的信任崩塌。利奥塔定义后现代为<b>"对宏大叙事的怀疑"</b>。</p>
+            <p>福柯分析"疯癫""监狱""性"如何被权力—知识构造；德里达用"解构"揭示文本内部那些自我瓦解的缝隙。他们不是要摧毁意义，而是警惕任何自称"唯一真理"的体系——警惕它们背后隐藏的权力。</p>
+            <div class="tag-row"><span class="tag">解构</span><span class="tag">知识考古</span><span class="tag">权力批判</span></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 03 中国哲学 ===== -->
+<section id="china" class="night-section">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">叁 / CHINESE PHILOSOPHY</div>
+      <h2>中国智慧：另一条看世界的路</h2>
+      <p>当希腊人在追问世界本原时，先秦诸子在追问：<b>如何治理天下？如何安顿身心？人与天地的关系是什么？</b>中国哲学不以建立体系为首要目标，而更重生命实践与伦理秩序。下面是最主要的几家。</p>
+    </div>
+    <div class="cn-grid">
+      <div class="cn-card">
+        <h4>儒家</h4>
+        <div class="fig">春秋 · 孔子（前 551—前 479）→ 孟子 → 荀子</div>
+        <p>儒家关切人在人伦关系中的自我修养。孔子以"仁"为核心——"仁者，爱人"，并通过"礼"把仁爱落实为日常行为秩序。孟子讲"性善"，人皆有恻隐之心；荀子则讲"性恶"，主张以"礼义"教化化性起伪。</p>
+        <div class="core">核心：仁 · 义 · 礼 · 智 · 信 · 修身齐家治国平天下</div>
+      </div>
+      <div class="cn-card">
+        <h4>道家</h4>
+        <div class="fig">春秋末 · 老子 → 战国 · 庄子</div>
+        <p>道家反对人为的雕琢与功利，主张顺应"道"——那先于天地、周行不殆的自然法则。老子主"无为而无不为"，小国寡民；庄子则进一步齐万物、一死生，追求"逍遥游"的精神自由。</p>
+        <div class="core">核心：道法自然 · 无为 · 齐物 · 逍遥</div>
+      </div>
+      <div class="cn-card">
+        <h4>墨家</h4>
+        <div class="fig">战国 · 墨子（约前 468—前 376）</div>
+        <p>站在下层劳动者立场，墨子提出<b>"兼爱""非攻"</b>——爱不应有差等，不应攻伐。他还讲"尚贤""节用""天志""明鬼"，并发展出中国古代少有的逻辑与认识论（墨辩）。</p>
+        <div class="core">核心：兼相爱 · 交相利 · 尚贤节用</div>
+      </div>
+      <div class="cn-card">
+        <h4>法家</h4>
+        <div class="fig">战国 · 商鞅、慎到、申不害 → 韩非集大成</div>
+        <p>法家不信任人性本善，也不相信道德说教能治国。主张以<b>"法"（明文律法）、"术"（驾驭臣下的权术）、"势"（君主的权势）</b>三结合，建立富国强兵的中央集权国家。秦制由此而来。</p>
+        <div class="core">核心：以法治国 · 性恶论 · 耕战</div>
+      </div>
+      <div class="cn-card">
+        <h4>佛家与禅宗</h4>
+        <div class="fig">汉代传入 · 隋唐鼎盛 · 六祖慧能（638—713）</div>
+        <p>佛教本来是印度思想，进入中国后被彻底中国化。禅宗尤其典型：不立文字、教外别传，主张<b>"明心见性""顿悟成佛"</b>——佛不在西天，就在你当下一念之中。它重塑了中国人的心性、诗学与美学。</p>
+        <div class="core">核心：诸行无常 · 诸法无我 · 明心见性</div>
+      </div>
+      <div class="cn-card">
+        <h4>宋明理学</h4>
+        <div class="fig">北宋 · 程颢程颐 → 南宋 · 朱熹 → 明代 · 王阳明</div>
+        <p>儒学吸收佛道思想后重建形而上学。程朱讲<b>"性即理"</b>，人要"格物致知"，即物穷理；陆王（陆九渊、王阳明）讲<b>"心即理"</b>，"心外无物""致良知"——真理不必外求，反求诸己即可。</p>
+        <div class="core">核心：天理 · 格物致知 · 致良知 · 存天理去人欲</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 04 核心问题 ===== -->
+<section id="questions">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">肆 / CORE QUESTIONS</div>
+      <h2>哲学的六个永恒问题</h2>
+      <p>下面这些问题没有标准答案，但两千多年来一流头脑反复思考它们。当你下次在生活中困惑时，会发现自己其实已经在做哲学了。</p>
+    </div>
+    <div class="q-list">
+      <div class="q-item">
+        <h4>① 我是谁？"自我"是什么？</h4>
+        <p>身体一直在新陈代谢，想法随时间变化，那个始终持存的"我"是什么？休谟说：当我向内省察，总是抓到知觉（冷热、爱恨、苦乐），从来抓不到一个纯粹的"我"。佛教讲"无我"，神经科学则把自我看作大脑建构出的叙事。</p>
+      </div>
+      <div class="q-item">
+        <h4>② 我们能认识什么？知识的边界在哪？</h4>
+        <p>你怎么确定此刻不是在做梦，或只是一颗泡在营养液里、被电极刺激的脑？科学是通往真理的唯一道路吗？数学真理是被"发现"的还是被"发明"的？这些问题属于认识论的核心。</p>
+      </div>
+      <div class="q-item">
+        <h4>③ 自由意志存在吗？</h4>
+        <p>如果你的大脑活动遵循物理规律，你的"选择"是不是早就被神经状态决定了？如果一切由前因决定，你为什么要为行为负责？还是说，人能在因果链条中真正"开始一个新的原因"？</p>
+      </div>
+      <div class="q-item">
+        <h4>④ 心与身是什么关系？</h4>
+        <p>大脑是一团物质，但"我看到红色、感到疼痛"这种主观体验（qualia）怎么从神经元放电中产生？这就是著名的"难问题"（Hard Problem of Consciousness）——目前人类还没有公认答案。</p>
+      </div>
+      <div class="q-item">
+        <h4>⑤ 什么是善？道德有客观标准吗？</h4>
+        <p>"杀人是错的"是像"水在100°C沸腾"一样的客观事实，还是只是人类进化出的主观情感？不同文化有不同道德，这是否意味着没有普世伦理？我们该以结果（功利主义）还是义务（康德）还是品格（德性伦理）来判断对错？</p>
+      </div>
+      <div class="q-item">
+        <h4>⑥ 怎样的人生才算"过得好"？</h4>
+        <p>快乐、财富、名声、德性、超越——你愿意把人生押在哪一个？亚里士多德说幸福是合乎德性的实现活动；伊壁鸠鲁说灵魂无纷扰；斯多葛说与自然一致；庄子说逍遥；佛陀说离苦。这是哲学最终要回答、也只能由你自己回答的问题。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 05 思想实验 ===== -->
+<section id="experiments">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">伍 / THOUGHT EXPERIMENTS</div>
+      <h2>六个最著名的思想实验</h2>
+      <p>哲学家通过设计假想情境，把抽象问题逼到墙角。下面这几个你可能已经听过——现在你知道它们在问什么了。</p>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card">
+        <div class="exp-name">洞穴寓言</div>
+        <div class="exp-author">柏拉图 · 《理想国》</div>
+        <p>一群囚徒从小被锁在洞穴里，只能看墙上的投影，把影子当成真实。有人挣脱锁链走出洞穴，看见阳光下的真实世界——他回去想救同伴，却被当作疯子。你确定你不是那个囚徒？</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-name">电车难题</div>
+        <div class="exp-author">菲利帕·福特 · 1967</div>
+        <p>一辆失控电车冲向轨道上的五个人，你手边有一个拉杆可以把它引向另一条轨道——但那边有一个人。你拉不拉？如果换一种情境：桥上有个胖子，把他推下去能挡住电车，你推不推？同样是一换五，为什么我们直觉完全不同？</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-name">缸中之脑</div>
+        <div class="exp-author">普特南 · 1981</div>
+        <p>你以为你在读这段话。但如果你其实是一颗被邪恶科学家泡在营养液里的脑，用电极向你输入一切知觉——你要怎么证明自己不是？这是"黑客帝国"的哲学原型，也是怀疑论最现代的版本。</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-name">中文房间</div>
+        <div class="exp-author">约翰·塞尔 · 1980</div>
+        <p>一个只懂英文的人被关在房间里，外面递进来中文纸条，他照着一本厚厚的规则手册把符号搬来搬去，递出去的中文回答完美流利。他真的"懂"中文吗？塞尔说不懂——这是对"强人工智能"的著名反驳：语法操作不等于语义理解。</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-name">忒修斯之船</div>
+        <div class="exp-author">古希腊普鲁塔克记载</div>
+        <p>一艘船的木板逐渐被替换，直到所有木板都不是原来那些——它还是原来那艘船吗？更进一步：如果把换下来的旧木板按原样重新拼成一艘船，哪一艘才是"真正的"忒修斯之船？这是人格同一性问题的经典版本。</p>
+      </div>
+      <div class="exp-card">
+        <div class="exp-name">无知之幕</div>
+        <div class="exp-author">罗尔斯 · 《正义论》 · 1971</div>
+        <p>假设你要在一个"无知之幕"后面设计社会规则——你不知道自己进去后会是贫富、男女、贤愚、强弱。你会选择什么样的分配规则？罗尔斯论证：在这种位置上，理性人会选择让最弱势者处境尽可能好的原则——这就是"作为公平的正义"。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 06 入门书单 ===== -->
+<section id="books">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">陆 / WHERE TO START</div>
+      <h2>给入门者的阅读路线</h2>
+      <p>不必从《纯粹理性批判》硬啃起。哲学经典可以先读"二手导读"再回原典。下面这份书单从轻到重排列，适合作为第一阶段路线。</p>
+    </div>
+    <div class="book-list">
+      <div class="book">
+        <div class="num">1</div>
+        <div>
+          <h4>《苏菲的世界》 · 乔斯坦·贾德</h4>
+          <p>以少女收到神秘来信的小说形式，把整个西方哲学史串了一遍。最适合零基础第一本，先建立地图感。</p>
+        </div>
+      </div>
+      <div class="book">
+        <div class="num">2</div>
+        <div>
+          <h4>《哲学家们都干了些什么》 · 林欣浩</h4>
+          <p>中文写得最轻松有趣的一本西哲入门，把哲学家的八卦、梗和核心思想讲得深入浅出，适合通勤路上读。</p>
+        </div>
+      </div>
+      <div class="book">
+        <div class="num">3</div>
+        <div>
+          <h4>《你的第一本哲学书》 · 托马斯·内格尔</h4>
+          <p>薄薄一小册，用最日常的语言讲九个核心问题。不堆术语，直接训练你"想问题"的方式。</p>
+        </div>
+      </div>
+      <div class="book">
+        <div class="num">4</div>
+        <div>
+          <h4>《中国哲学简史》 · 冯友兰</h4>
+          <p>用英文写就、再译回中文的经典小册子。从先秦到近代，一气呵成，是了解中国哲学绕不开的入门书。</p>
+        </div>
+      </div>
+      <div class="book">
+        <div class="num">5</div>
+        <div>
+          <h4>《论语》《道德经》</h4>
+          <p>不必读注疏本，找一本好的白话翻译对照原文。每天读一两条，比一口气读完更能体会中国哲学的味道。</p>
+        </div>
+      </div>
+      <div class="book">
+        <div class="num">6</div>
+        <div>
+          <h4>《沉思录》 · 马可·奥勒留</h4>
+          <p>罗马皇帝写给自己的哲学札记。两千年前的斯多葛笔记，至今仍是都市人焦虑时的镇定剂。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="serif">Philosophia · 爱智慧</div>
+  <div>本页面为哲学入门学习笔记，内容综合通行的哲学史教材写法整理，供初学者建立地图感。<br>真正的学习，从你开始问自己第一个问题的那一刻起。</div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到顶部">↑</button>
+
+<script>
+  // 流派卡片展开
+  document.querySelectorAll('.school-head').forEach(h=>{
+    h.addEventListener('click',()=>{
+      h.parentElement.classList.toggle('open');
+    });
+  });
+  // 回到顶部
+  const tt=document.getElementById('toTop');
+  window.addEventListener('scroll',()=>{
+    if(window.scrollY>600)tt.classList.add('show');else tt.classList.remove('show');
+  });
+  tt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+</script>
+</body>
+</html>
